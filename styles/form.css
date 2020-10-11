@@ -1,0 +1,137 @@
+.form {
+    margin: 50px auto 0 auto;
+    max-width: 1360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 536px;
+}
+
+.form-text {
+    color: #F2F2F2;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 0 50px;
+}
+
+.form-label {
+    color: #F2F2F2;
+    font-size: 16px;
+    margin: 0 0 8px;
+}
+
+.form-input {
+    width: 80%;
+    height: 26px;
+    outline: none;
+    border-radius: 2px;
+    border: none;
+    padding: 4px 6px 0;
+    font-size: 18px;
+    color: #0D0D0D;
+    background-color: #F2F2F2;
+}
+
+.form-input:focus {
+    background-color: #dddbdb;
+}
+
+.form-button {
+    width: 82%;
+    margin: 20px 0 0;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #F2F2F2;
+    color: #F2F2F2;
+    background-color: #0D0D0D;
+    cursor: pointer;
+    outline: none;
+}
+
+.form-button:hover {
+    background-color: #181717;
+}
+
+.form-button:active {
+    background-color: #181717;
+}
+
+.form-email {
+    color: #F2F2F2;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 60px 0 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.form-emailRed {
+    color: #F20530;
+}
+
+#name-error {
+    color: #F20530;
+    margin: 3px 0 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#email-error {
+    color: #F20530;
+    margin: 3px 0 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+#phone-error {
+    color: #F20530;
+    margin: 3px 0 30px;
+    text-align: center;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 599.98px) {
+
+    .form {
+        margin: 0 auto;
+        max-width: 1360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .form-text {
+        padding: 20px 10px;
+        margin: 0 0 20px;
+    }
+
+    .form-email {
+        color: #F2F2F2;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 20px 0 0;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    #name-error {
+        color: #F20530;
+        margin: 3px 0 30px;
+        text-align: center;
+        font-size: 13px;
+    }
+    
+    #email-error {
+        color: #F20530;
+        margin: 3px 0 30px;
+        text-align: center;
+        font-size: 13px;
+    }
+    
+    #phone-error {
+        color: #F20530;
+        margin: 3px 0 30px;
+        text-align: center;
+        font-size: 13px;
+    }
+}

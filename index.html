@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/brand.css">
+    <link rel="stylesheet" href="./styles/wait.css">
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,900&display=swap" rel="stylesheet">
+    <title>Happy Taxi</title>
+</head>
+<body>
+
+    <section class='brand'>
+        <img class='brand-logo' src='./assets/img/logo-white.png'>
+        <p class='brand-text'>
+            No pidas
+            un <span class='brand-textRed'>taxi</span>, mejor
+            pide un <span class='brand-textRed'>happy</span>
+        </p>
+    </section>
+
+    <form id='form' class='form'>
+        <p class='form-text'>
+            COMPÁRTENOS TUS DATOS Y SÉ EL PRIMER@
+            EN ENTERARTE DE NUESTRAS NOVEDADES
+        </p>
+        <label class='form-label' for='name'>NOMBRE</label>
+        <input
+            class='form-input'
+            name='name'
+            id='name'
+            type='text'
+            required
+        >
+        <p id='name-error'></p>
+        <label class='form-label' for='email'>CORREO ELECTRÓNICO</label>
+        <input
+            class='form-input'
+            name='email'
+            id='email'
+            type='text'
+            required
+        >
+        <p id='email-error'></p>
+        <label class='form-label' for='phone'>TELÉFONO</label>
+        <input
+            class='form-input'
+            name='phone'
+            id='phone'
+            type='number'
+            required
+        >
+        <p id='phone-error'></p>
+        <button
+            class='form-button'
+            type='submit'
+        >
+            ENVIAR
+        </button>
+        <a href="mailto:contacto@happytaxi.com.mx" class='form-email'>
+            <span class='form-emailRed'>CONTACTO</span>@HAPPYTAXI.COM.MX
+        </a>
+    </form>
+
+    <section class='wait'>
+        <p class='wait-text'>Espéranos pronto...</p>
+        <div class='wait-container'>
+            <img
+                src='./assets/img/apple.png'
+                class='wait-container_image'
+            >
+            <div class='wait-container_textContainer'>
+                <p>Próximamente disponible en</p>
+                <p>App Store</p>
+            </div>
+        </div>
+        <div class='wait-container'>
+            <img
+                src='./assets/img/google.png'
+                class='wait-container_image'
+            >
+            <div class='wait-container_textContainer'>
+                <p>Próximamente disponible en</p>
+                <p>Google Play</p>
+            </div>
+        </div>
+    </section>
+
+    <section id='modalContainer' class='modalContainer'>
+        <div class='modals modal'>
+            <div
+                id='closeModal'
+                class='modals modal-close'
+                onclick='handleCloseModal()'
+            >
+                X
+            </div>
+            <p class='modals modal-title'>
+                ¡Gracias por proporcionarnos tus datos!
+            </p>
+            <p class='modals modal-text'>
+                Te avisaremos cuando
+                puedas disfrutar de Happy Taxi
+                en tu localidad
+            </p>
+        </div>
+    </section>
+
+    <script src='./index.js'></script>
+</body>
+</html>
