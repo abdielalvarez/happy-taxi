@@ -31,30 +31,51 @@ const validateEmail = email => {
 
 const validatePhone = phone => {
     if (!phoneRegex.test(phone)) {
-        redPhone.innerHTML = `${phone} no es un email válido`
+        redPhone.innerHTML = `${phone} no es un número telefónico válido`
         return true
     }
     return false
 }
 
-const handleSubmit = e => {
-    e.preventDefault()
+const displayModal = () => {
+    modalContainer.style.position = "fixed";
+    modalContainer.style.display = "flex";
+    for (let i = 0; i < modalElems.length; i++) {
+        modalElems[i].style.display = "block";
+    }
+}
 
+const handleSubmit = async (e) => {
+    e.preventDefault()
     const nameError = validateName(name.value)
     const emailError = validateEmail(email.value)
-    const phoneError = validatePhone(phone.value)
-    
-    console.log('name.value', name.value);
-    console.log('email.value', email.value);
-    console.log('phone.value', phone.value);
-
-    if (!nameError && !emailError && !phoneError) {
-        console.log('fetch');
-        modalContainer.style.position = "fixed";
-        modalContainer.style.display = "flex";
-        for (let i = 0; i < modalElems.length; i++) {
-            modalElems[i].style.display = "block";
+    let phoneError = ''
+    if (phone.value) {
+        phoneError = validatePhone(phone.value)
+    }
+    if (!nameError && !emailError && !phoneError) {        
+        try {
+            let values = {}
+            if (name.value) { values['name'] = name.value }
+            if (email.value) { values['email'] = email.value }
+            if (phone.value) { values['phone_number'] = phone.value }
+            console.log(values);
+            const data = await fetch('https://lofty-sonar-291121.uc.r.appspot.com/api/register/', {
+                method: 'POST',
+                body: JSON.stringify(values),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
+                },
+            })
+            const json = await data.json()
+            console.log('json', json);
+            // displayModal()
+        } catch (error) {
+            console.log('error', error);
+            // displayModal() 
         }
+        
     }
 }
 
